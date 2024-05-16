@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { log } from 'console';
 import { FirebaseTSAuth } from 'firebasets/firebasetsAuth/firebaseTSAuth';
+import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+
+
+
 
 @Component({
   selector: 'app-authenticator',
@@ -10,7 +13,7 @@ import { FirebaseTSAuth } from 'firebasets/firebasetsAuth/firebaseTSAuth';
 export class AuthenticatorComponent {
   state = AuthenticatorCompState.LOGIN;
   firebasetsAuth: FirebaseTSAuth;
-  constructor(){
+  constructor(private bottomSheetRef: MatBottomSheetRef){
     this.firebasetsAuth = new FirebaseTSAuth();
   }
 
@@ -23,7 +26,7 @@ export class AuthenticatorComponent {
         {
           email: email,
           onComplete: (err) => {
-            alert(`Email elküldve a ${email} email címre`);
+            this.bottomSheetRef.dismiss();
           }
         }
       );
@@ -43,7 +46,7 @@ export class AuthenticatorComponent {
             email: email,
             password: password,
             onComplete: (uc) => {
-              alert("Bejelentkezve");
+              this.bottomSheetRef.dismiss();
             },
             onFail: (err) => {
               alert(err);
@@ -73,10 +76,7 @@ export class AuthenticatorComponent {
           email: email,
           password: password,
           onComplete: (uc) => {
-          alert("Felhasználó létrehozva");
-          registerEmail.value = "";
-          registerPassword.value = "";
-          registerConfirmPassword.value = "";
+            this.bottomSheetRef.dismiss();
         },
         onFail: (err) => {
           alert("Felhasználó létrehozása sikertelen");

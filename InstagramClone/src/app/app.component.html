@@ -7,9 +7,12 @@
         
     </div>
     <div id="nav-bar-right">
-        <div (click)="onLoginClick()"
-         id="nav-bar-items">Bejelentkezés</div>
+        <div *ngIf="!loggedIn()" (click)="onLoginClick()"
+            id="nav-bar-items">Bejelentkezés</div>
+         <div *ngIf="loggedIn()" (click)="onLogoutClick()"
+            id="nav-bar-items">Kijelentkezés</div>
     </div>
+    
 
   </div>
 
@@ -18,3 +21,5 @@
 
 
 <router-outlet></router-outlet>
+
+<app-profile [show]="loggedIn()"></app-profile>

@@ -1,3 +1,6 @@
+(global as any).WebSocket = require('ws');
+(global as any).XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
 import express from 'express';
