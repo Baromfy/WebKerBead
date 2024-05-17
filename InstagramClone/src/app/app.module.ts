@@ -14,8 +14,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet'
 import { MatCardModule } from '@angular/material/card';
 import { AuthenticatorComponent } from './tools/authenticator/authenticator.component';
-import { ProfileComponent } from './tools/profile/profile.component'
-
+import { ProfileComponent } from './tools/profile/profile.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatIconModule } from "@angular/material/icon";
+import { PostFeedComponent } from './pages/post-feed/post-feed.component';
+import { CreatePostComponent } from './tools/create-post/create-post.component';
+import { PostComponent } from './tools/post/post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,9 @@ import { ProfileComponent } from './tools/profile/profile.component'
     HomeComponent,
     AuthenticatorComponent,
     ProfileComponent,
+    PostFeedComponent,
+    CreatePostComponent,
+    PostComponent,
     //EnvironmentComponent
   ],
   imports: [
@@ -31,6 +39,9 @@ import { ProfileComponent } from './tools/profile/profile.component'
     MatButtonModule,
     MatBottomSheetModule,
     MatCardModule,
+    MatDialogModule,
+    MatIconModule,
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),

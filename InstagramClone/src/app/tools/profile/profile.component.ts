@@ -24,21 +24,30 @@ export class ProfileComponent {
   ){
     let name = nameInput.value;
     let description = descriptionInput.value;
+    let user = this.auth.getAuth().currentUser;
 
-    this.firestore.create(
-      {
-        path: [],
-        data: {
-
-      },
-      onComplete: (docId) => {
-
-      },
-      onFail: (err) => {
-
+    if (user){
+      this.firestore.create(
+        {
+          path: ["Users", user.uid],
+          data: {
+            publicName: name,
+            description: description
+        },
+        onComplete: (docId) => {
+          alert("Profile Created");
+          nameInput.value = "";
+          descriptionInput.value = "";
+        },
+        onFail: (err) => {
+  
+        }
       }
+      );
+
     }
-    );
+
+    
 
   }
 }

@@ -31,6 +31,7 @@
     font-size: 2em;
     display: inline-block;
     cursor: pointer;
+    margin-right: 1em;
     color: rgb(255, 94, 0);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: rgb(0, 0, 0);

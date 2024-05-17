@@ -9,7 +9,9 @@
     <div id="nav-bar-right">
         <div *ngIf="!loggedIn()" (click)="onLoginClick()"
             id="nav-bar-items">Bejelentkezés</div>
-         <div *ngIf="loggedIn()" (click)="onLogoutClick()"
+        <div *ngIf="loggedIn() && userHasProfile"
+            id="nav-bar-items">Hello, {{userDocument.publicName}}</div>
+        <div *ngIf="loggedIn()" (click)="onLogoutClick()"
             id="nav-bar-items">Kijelentkezés</div>
     </div>
     
@@ -22,4 +24,4 @@
 
 <router-outlet></router-outlet>
 
-<app-profile [show]="loggedIn()"></app-profile>
+<app-profile [show]="loggedIn() && !userHasProfile"></app-profile>
