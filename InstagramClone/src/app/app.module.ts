@@ -20,7 +20,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { PostFeedComponent } from './pages/post-feed/post-feed.component';
 import { CreatePostComponent } from './tools/create-post/create-post.component';
 import { PostComponent } from './tools/post/post.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { ReplyComponent } from './tools/reply/reply.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     PostFeedComponent,
     CreatePostComponent,
     PostComponent,
+    ReplyComponent,
     //EnvironmentComponent
   ],
   imports: [
@@ -46,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    FirebaseTSApp.init(environment.firebaseConfig)
+    FirebaseTSApp.init(environment.firebaseConfig),
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent]
 })

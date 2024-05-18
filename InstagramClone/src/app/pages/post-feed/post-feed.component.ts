@@ -22,6 +22,8 @@ export class PostFeedComponent implements OnInit {
 
   onCreatePostClick(){
     this.dialog.open(CreatePostComponent);
+
+    
   }
 
   getPosts(){
@@ -36,6 +38,7 @@ export class PostFeedComponent implements OnInit {
           result.docs.forEach(
             doc => {
               let post = <PostData>doc.data();
+              post.postId = doc.id;
               this.posts.push(post);
             }
           )
@@ -52,6 +55,7 @@ export class PostFeedComponent implements OnInit {
 }
 
 export interface PostData {
+  postId: any;
   comment: string;
   creatorId: string;
   imageUrl?: string;
