@@ -1,0 +1,25 @@
+[debug] [2024-05-18T00:27:02.986Z] ----------------------------------------------------------------------
+[debug] [2024-05-18T00:27:02.988Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\molna\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-18T00:27:02.989Z] CLI Version:   13.9.0
+[debug] [2024-05-18T00:27:02.989Z] Platform:      win32
+[debug] [2024-05-18T00:27:02.990Z] Node Version:  v18.18.2
+[debug] [2024-05-18T00:27:02.991Z] Time:          Sat May 18 2024 02:27:02 GMT+0200 (közép-európai nyári idő)
+[debug] [2024-05-18T00:27:02.991Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-18T00:27:03.091Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-18T00:27:03.092Z] > authorizing via signed-in user (molnarabel2000@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\molna\Documents\WebKerBead\WebKerBead\InstagramClone
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
